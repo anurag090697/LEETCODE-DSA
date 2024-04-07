@@ -9,7 +9,6 @@ var isAnagram = function(s, t) {
     let t1 = t.split('');
     s1.sort();
     t1.sort();
-    console.log(t1, s1);
     for(let i = 0; i < s1.length; i++){
         if(s1[i] != t1[i]) return false;
     }
