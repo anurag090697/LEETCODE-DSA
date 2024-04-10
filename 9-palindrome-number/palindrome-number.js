@@ -9,6 +9,5 @@ var isPalindrome = function(x) {
         temp = (temp * 10) + (tm % 10);
         tm = parseInt(tm/10);
     }
-    console.log(temp);
     return x === temp;
 };
