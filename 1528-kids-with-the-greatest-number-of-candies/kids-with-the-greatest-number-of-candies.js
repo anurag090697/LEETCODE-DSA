@@ -4,18 +4,15 @@
  * @return {boolean[]}
  */
 var kidsWithCandies = function (candies, extraCandies) {
-    let max = 0;
-    for (let i = 0; i < candies.length; i++) {
-        if (candies[i] > max) max = candies[i];
-    }
+    let max = Math.max(...candies);
     let ans = [];
     for (let i = 0; i < candies.length; i++) {
         if (candies[i] + extraCandies >= max) {
-            ans.push(true);
+            candies[i] = true;
         }
         else {
-            ans.push(false);
+            candies[i] = false;
         }
     }
-    return ans;
+    return candies;
 };
