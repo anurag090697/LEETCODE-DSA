@@ -4,9 +4,6 @@
  */
 var minMoves = function(nums) {
     let low = Math.min(...nums);
-    let ans = 0;
-    nums.forEach((ele) =>{
-        ans += ele-low;
-    })
-    return ans;
+    let sum = nums.reduce((num, ele) => num + ele, 0);
+    return sum - (low * nums.length);
 };
