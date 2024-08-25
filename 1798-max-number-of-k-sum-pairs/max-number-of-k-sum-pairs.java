@@ -1,20 +1,19 @@
 class Solution {
     public int maxOperations(int[] arr, int k) {
-         int ans = 0;
-        HashMap<Integer, Integer> hm = new HashMap<>();
-        for(int i = 0; i < arr.length; i++){
-            int sum = k - arr[i];
-            if(hm.containsKey(sum)){
+        int ans = 0;
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        // for(int i : arr) hm.put(i, hm.getOrDefault(i,0)+1);
+
+        for(int i : arr){
+            int res = k - i;
+            if(hm.containsKey(res)){
                 ans++;
-                hm.put(sum, hm.get(sum)-1);
-                if(hm.get(sum) == 0){
-                    hm.remove(sum);
-                }    
+                hm.put(res, hm.get(res)-1);
+                if(hm.get(res) == 0) hm.remove(res);
             }
-            else{
-                    hm.put(arr[i], hm.getOrDefault(arr[i], 0)+1);
-            }
+            else hm.put(i, hm.getOrDefault(i,0)+1);
+            
         }
-        return(ans);
+        return ans;
     }
 }
