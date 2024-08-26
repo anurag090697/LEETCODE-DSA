@@ -1,18 +1,16 @@
 class Solution {
     public int[] kWeakestRows(int[][] mat, int k) {
         int n = mat.length, m = mat[0].length;
-        PriorityQueue<Integer> pq = new PriorityQueue();
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
         for(int i = 0; i < n; i++){
-            int cnt = 0;
+            int sum = 0;
             for(int j = 0; j < m; j++){
-                cnt += mat[i][j];
+                sum += mat[i][j];
             }
-            pq.add(cnt * 1000 + i);
+            pq.add((sum * 10000) + i);
         }
-        int arr [] = new int[k];
-        for(int i = 0 ; i < k; i++){
-            arr[i] = pq.remove() % 1000;
-        }
-        return arr;
+        int ans[] = new int[k];
+        for(int i = 0; i < ans.length; i++) ans[i] = pq.remove() % 10000;
+        return ans;
     }
 }
