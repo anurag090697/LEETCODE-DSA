@@ -1,20 +1,14 @@
 class Solution {
-    public String longestCommonPrefix(String[] a) {
-        int n = a.length;
-        String m = a[0];
-        
-        int cnt = 300;
-        for(int i = 0; i < n; i++){
+    public String longestCommonPrefix(String[] strs) {
+        int minl = 400;
+        for(int i = 0; i < strs.length; i++){
             int idx = 0;
-            String tm = a[i];
-            while(idx < tm.length() && idx < cnt){
-                if(m.charAt(idx) == tm.charAt(idx)){
-                    idx++;
-                }
+            while(idx < strs[i].length() && idx < minl){
+                if(strs[0].charAt(idx) == strs[i].charAt(idx)) idx++;
                 else break;
             }
-            cnt = Math.min(idx, cnt);
+            minl = Math.min(minl,idx);
         }
-        return (m.substring(0, cnt));
+        return strs[0].substring(0,minl);
     }
 }
