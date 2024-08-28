@@ -4,6 +4,8 @@ class Solution {
     char arr2[] = t.toCharArray();
     Arrays.sort(arr1);
     Arrays.sort(arr2);
-    return Arrays.equals(arr1,arr2);
+    String s1 = new String(arr1);
+    String t1 = new String(arr2);
+    return s1.equals(t1);
     }
 }
