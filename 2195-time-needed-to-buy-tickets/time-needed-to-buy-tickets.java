@@ -1,16 +1,16 @@
 class Solution {
-    public int timeRequiredToBuy(int[] arr, int k) {
-        int cnt = 0;
-        while(arr[k] != 0){
-            int j = 0;
-            while( j < arr.length && arr[k] > 0){
-                if(arr[j] != 0){
-                    arr[j]--;
-                    cnt++;
+    public int timeRequiredToBuy(int[] tickets, int k) {
+        int turns = 0;
+        while(tickets[k] != 0){
+            int i = 0;
+            while(i < tickets.length && tickets[k] > 0){
+                if(tickets[i] != 0){
+                    tickets[i]--;
+                    turns++;
                 }
-                j++;
+                i++;
             }
         }
-        return cnt;
+        return turns;
     }
 }
