@@ -1,15 +1,14 @@
 class Solution {
     public int thirdMax(int[] arr) {
-        int n = arr.length;
-        Arrays.sort(arr);
-        int cnt = 1, max = arr[n-1];
-        for(int i = n-1; i > -1; i--){
-            if(arr[i] < max){
+       Arrays.sort(arr);
+        int tm = arr[arr.length-1], cnt = 1;
+        for(int i = arr.length-1; i > -1; i--){
+            if(arr[i] != tm){
+                tm = arr[i];
                 cnt++;
-                max = arr[i];
-            } 
-            if(cnt == 3) return arr[i];
+            }
+          if(cnt == 3) return arr[i];
         }
-        return arr[n-1];
+        return arr[arr.length-1];
     }
 }
