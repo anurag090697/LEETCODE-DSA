@@ -13,10 +13,10 @@ class Solution {
             return freq[b] - freq[a];
         };
         Arrays.sort(ch, myComp);
-        StringBuilder result = new StringBuilder();
+        String result = "";
         for (char c : ch) {
-            result.append(c);
+            result += c;
         }
-        return result.toString();
+        return result;
     }
 }
