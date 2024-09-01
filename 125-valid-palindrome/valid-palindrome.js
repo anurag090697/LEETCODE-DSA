@@ -2,23 +2,23 @@
  * @param {string} s
  * @return {boolean}
  */
-var isPalindrome = function(s) {
-    let s1 = "";
-    for(let i = 0; i < s.length; i++){
-        let char = s.charAt(i);
-        if ((char >= "a" && char <= "z") || (char >= "A" && char <= "Z") || (char >= "0" && char <= "9")){
-            s1 += char.toLowerCase();
-        }
-    }
-    
-    let i = 0;
-    let j = s1.length-1;
-    while(i <= j){
-        if(s1.charAt(i) !== s1.charAt(j)){
+var isPalindrome = function (s) {
+    let i = 0, j = s.length - 1;
+    let arr = s.split('');
+    while (i < j) {
+        let c1 = arr[i].toLowerCase();
+        let c2 = arr[j].toLowerCase();
+        if (!/[a-zA-Z0-9]/.test(c1)) {
+            i++;
+        } else if (!/[a-zA-Z0-9]/.test(c2)) {
+            j--;
+        } else if (c1 != c2) {
             return false;
+        } else {
+            i++;
+            j--;
         }
-        i++;
-        j--;
     }
+
     return true;
 };
