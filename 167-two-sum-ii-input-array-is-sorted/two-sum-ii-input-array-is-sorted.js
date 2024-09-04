@@ -9,13 +9,10 @@ var twoSum = function (numbers, target) {
     while (i < j) {
         let sum = numbers[i] + numbers[j];
         if (sum == target) {
-            ans.push(i+1);
-            ans.push(j+1);
-            break;
+            return [i+1,j+1];
         } else if (sum > target)
             j--;
         else
             i++;
     }
-    return ans;
 };
