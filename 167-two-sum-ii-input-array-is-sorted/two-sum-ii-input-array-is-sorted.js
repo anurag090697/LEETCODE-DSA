@@ -5,12 +5,10 @@
  */
 var twoSum = function (numbers, target) {
     let i = 0, j = numbers.length - 1;
-    let ans = [];
     while (i < j) {
-        let sum = numbers[i] + numbers[j];
-        if (sum == target) {
+        if (numbers[i] + numbers[j] === target) {
             return [i+1,j+1];
-        } else if (sum > target)
+        } else if (numbers[i] + numbers[j] > target)
             j--;
         else
             i++;
