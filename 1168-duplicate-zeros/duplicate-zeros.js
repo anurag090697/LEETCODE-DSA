@@ -3,19 +3,14 @@
  * @return {void} Do not return anything, modify arr in-place instead.
  */
 var duplicateZeros = function (arr) {
-    let ans = new Array(arr.length).fill(0);
-    let i = 0, j = 0;
-    
-    while (j < arr.length) {
-        if (arr[i] == 0) {
-            if (j + 1 < arr.length) ans[j + 1] = 0;
-            j++;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] === 0){
+            let j = arr.length-1;
+            while(j > i){
+                arr[j] = arr[j-1];
+                j--;
+            }
+            i++;
         }
-        else {
-            ans[j] = arr[i];
-        }
-        i++;
-        j++;
     }
-    for (i = 0; i < arr.length; i++) arr[i] = ans[i];
 };
