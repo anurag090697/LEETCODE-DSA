@@ -3,19 +3,9 @@ class Solution {
         int sum = 0;
         int n = arr.length;
         if(arr.length == 1) return arr[0];
-        HashMap<Integer, Integer> hm = new HashMap<>();
-        for(int i = 0; i < n; i++){
-            if(hm.containsKey(arr[i])){
-                hm.put(arr[i], hm.get(arr[i])+1);
-            }
-            else{
-                hm.put(arr[i], 1);
-            }
-        }
-        for(Integer k: hm.keySet()){
-            if(hm.get(k) == 1) sum += k; 
-            // System.out.println(hm.get(key));
-        }
+        int freq[] = new int[101];
+        for(int i : arr) freq[i]++;
+        for(int i = 0; i < 101; i++) sum += freq[i] == 1 ? i : 0;
         return sum;
     }
 }
