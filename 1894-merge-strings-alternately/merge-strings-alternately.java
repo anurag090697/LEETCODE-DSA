@@ -4,13 +4,12 @@ class Solution {
         char arr[] = new char[word1.length() + word2.length()];
         String ans = "";
         // System.out.print(arr.toString());
-        while(i < word1.length() && i < word2.length()){
-            arr[j++] = word1.charAt(i);
-            arr[j++] = word2.charAt(i++);
+        while(i < word1.length() || i < word2.length()){
+           if(i < word1.length()) arr[j++] = word1.charAt(i);
+           if(i < word2.length()) arr[j++] = word2.charAt(i);
+           i++;
         }
         
-        while(i < word1.length()) arr[j++] = word1.charAt(i++);
-        while(i < word2.length()) arr[j++] = word2.charAt(i++);
         for(char p : arr) ans += p;
         return ans;
     }
