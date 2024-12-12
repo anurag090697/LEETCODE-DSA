@@ -6,14 +6,14 @@ class Solution {
             else if(nums1[i] > nums2[j]) j++;
             else i++;
         }
-        while(i < nums1.length && j < nums2.length){
-            if(nums1[i] == nums2[j]) return nums1[i];
-            i++;
-        }
-         while(j < nums2.length && i < nums1.length ){
-            if(nums2[j] == nums1[i]) return nums2[j];
-            j++;
-        }
+        // while(i < nums1.length && j < nums2.length){
+        //     if(nums1[i] == nums2[j]) return nums1[i];
+        //     i++;
+        // }
+        //  while(j < nums2.length && i < nums1.length ){
+        //     if(nums2[j] == nums1[i]) return nums2[j];
+        //     j++;
+        // }
         return -1;
     }
 }
